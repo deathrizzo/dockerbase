@@ -12,5 +12,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-    - name: Push image to repository
-      run: docker push elzwhere/go-world go-world:$(date +%s)
+    - name: Publish Docker
+      uses: elgohr/Publish-Docker-Github-Action@2.6
+      with:
+        name: elzwhere/go-world
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
