@@ -13,4 +13,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Push image to repository
-      run: docker push elzwhere/go-world --tag go-world:$(date +%s)
+      run: docker push elzwhere/go-world go-world:$(date +%s)
