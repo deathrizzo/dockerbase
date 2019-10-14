@@ -14,8 +14,8 @@ spec:
         app: go-world 
     spec:                        # Spec for the container which will run in the Pod
       containers:
-      - name: go-hello-world
-        image: elzwhere/go-world:1.0.0 
+      - name: go-world
+        image: elzwhere/dockerbase:latest
         imagePullPolicy: Always
         ports:
           - containerPort: 8080  # Should match the port number that the Go application listens on
