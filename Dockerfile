@@ -10,7 +10,7 @@ LABEL maintainer="deathrizzo <elzwhere@gmail.com>"
 WORKDIR /app
 
 # Copy go mod and sum files
-COPY go.mod go.sum ./
+COPY go/go.mod go/go.sum ./
 
 # Download all dependancies. Dependencies will be cached if the go.mod and go.sum files are not changed
 RUN go mod download
@@ -36,4 +36,4 @@ COPY --from=builder /app/main .
 EXPOSE 8080
 
 # Command to run the executable
-CMD ["./main"] 
+CMD ["./go//main"] 
